@@ -4,8 +4,11 @@ public abstract class Vehicule {
     private int locationNbr ;
     private int serviceHours; 
     private float priceV;
+    private Boolean outOfService;
+    private Boolean underRepair;
+    private static final int maxLocations = 15;
 
-
+   
     public int getVehiculeId() {
         return vehiculeId;
     }
@@ -40,11 +43,54 @@ public abstract class Vehicule {
         this.locationNbr = locationNbr;
         this.serviceHours = serviceHours;
         this.priceV = priceV;
+        this.outOfService=false;
+        this.underRepair=false;
     }
 
     
-    
+     
+    public Boolean isOutOfService() {
+        return outOfService;
+    }
+     public void setOutOfService(Boolean outOfService) {
+         this.outOfService = outOfService;
+     }
+     public Boolean isUnderRepair() {
+         return underRepair;
+     }
+     public void setUnderRepair(Boolean underRepair) {
+         this.underRepair = underRepair;
+     } 
  
 
+    public void addLocation(){
+
+        locationNbr++;
+        if (locationNbr>=maxLocations) {
+            outOfService=true;
+        }
+
+
+
+
+         }
+
+        //  ajouter ca et la var de maxLoc s
+    public void startRepair(){
+        underRepair =true;
+        outOfService=true;
+
+
+    }
+    public void finishRepair(){
+        underRepair =false;
+        outOfService=false;
+
+
+    }
+
+
+
+    
 
 }

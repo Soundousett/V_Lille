@@ -1,4 +1,6 @@
 public class Accessory {
+
+    
     private int accessoryId;
     private String nameAcc;
     private float priceAcc;

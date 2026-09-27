@@ -1,7 +1,8 @@
 public class User {
+
     private int userId;
     private String userName;
-    private  float accountBalence;
+    private  float accountBalance;
 
 
 
@@ -20,21 +21,29 @@ public class User {
         this.userName = userName;
     }
     public float getAccountBalence() {
-        return accountBalence;
+        return accountBalance;
     }
     public void setAccountBalence(float accountBalence) {
-        this.accountBalence = accountBalence;
+        this.accountBalance = accountBalence;
     }
 
 
 
-    public User(int userId, String userName, float accountBalence) {
+    public User(int userId, String userName, float accountBalance) {
         this.userId = userId;
         this.userName = userName;
-        this.accountBalence = accountBalence;
+        this.accountBalance = accountBalance;
     }
-
+//ajoute ca 
+    public boolean canPay (float price){
+        return price<= accountBalance;
     
+    }
+    public void pay(float price){
+         if (canPay(price)) {
+            accountBalance-=price;
+         }
+    }
     
 
 }

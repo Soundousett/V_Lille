@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class Rentel {
+public class Rental {
      private int vehiculeId;
     private int userId;
     private LocalDate dateRentel;
@@ -27,7 +27,7 @@ public class Rentel {
 
 
     
-    public Rentel(int vehiculeId, int userId, LocalDate dateRentel) {
+    public Rental(int vehiculeId, int userId, LocalDate dateRentel) {
         this.vehiculeId = vehiculeId;
         this.userId = userId;
         this.dateRentel = dateRentel;
